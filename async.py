@@ -1,5 +1,5 @@
 import asyncio
-
+import random
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message
 
@@ -29,6 +29,17 @@ async def command_better(message: Message):
         await message.answer(str(number2))
     else:
         await message.answer("Числа одинаковые!")
+
+
+@dp.message(F.text.startswith("Посчитай"))
+async def command_start(message: Message):
+    message_text = "/random_name Илья Женя Егор Артем"
+    splited_message_text = message_text.split(" ")
+    splited_message_text.remove("/random_name")
+    a = random.choice(splited_message_text)
+    await message.answer("Счастливое имя {a}")
+
+
 
 
 async def main():

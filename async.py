@@ -31,7 +31,7 @@ async def command_better(message: Message):
         await message.answer("Числа одинаковые!")
 
 
-@dp.message(F.text.startswith("Посчитай"))
+@dp.message(F.text.startswith("/random_name"))
 async def command_start(message: Message):
     message_text = "/random_name Илья Женя Егор Артем"
     splited_message_text = message_text.split(" ")

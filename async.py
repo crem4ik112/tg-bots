@@ -33,7 +33,7 @@ async def command_better(message: Message):
 
 @dp.message(F.text.startswith("/random_name"))
 async def command_start(message: Message):
-    message_text = "/random_name Илья Женя Егор Артем"
+    message_text = message.text 
     splited_message_text = message_text.split(" ")
     splited_message_text.remove("/random_name")
     a = random.choice(splited_message_text)

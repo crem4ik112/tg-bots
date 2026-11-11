@@ -37,7 +37,7 @@ async def command_start(message: Message):
     splited_message_text = message_text.split(" ")
     splited_message_text.remove("/random_name")
     a = random.choice(splited_message_text)
-    await message.answer("Счастливое имя {a}")
+    await message.answer(f"Счастливое имя {a}")
 
 
 

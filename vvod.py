@@ -6,7 +6,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
-# Ваши переменные bot и token
+tg_bot_token = "9096492239:AAE7BsEIJs_k21IzY4zHJMiH-2ZiKHFQCK4"
 # Небольшое изменение dp
 dp = Dispatcher(storage=MemoryStorage())
 
@@ -42,3 +42,11 @@ async def process_age(message: Message, state: FSMContext):
     await message.answer(f"Регистрация в боте завершена!")
     # Сбрасываем состояние
     await state.clear()  
+
+async def main():
+    bot = Bot(token=tg_bot_token)
+    await dp.start_polling(bot)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
